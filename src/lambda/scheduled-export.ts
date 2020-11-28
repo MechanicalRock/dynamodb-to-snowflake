@@ -10,7 +10,5 @@ export const handler = async (event: Event): Promise<void> => {
         TableArn: process.env.TABLE_ARN,
         originalTime: event && event.time ? event.time : new Date().toISOString(),
     };
-    console.log(`params are `);
-    console.log(retriableExportParams);
     await tryExportDynamoDBToS3(retriableExportParams);
 };
