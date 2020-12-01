@@ -1,0 +1,57 @@
+{
+  "name": "dataops-dynamodb-to-snowflake",
+  "version": "0.1.0",
+  "bin": {
+    "dataops-dynamodb-to-snowflake": "bin/dataops-dynamodb-to-snowflake.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:lambda": "webpack",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.75.0",
+    "@aws-cdk/aws-dynamodb": "^1.75.0",
+    "@aws-cdk/aws-events": "^1.75.0",
+    "@aws-cdk/aws-events-targets": "^1.75.0",
+    "@aws-cdk/aws-s3": "^1.75.0",
+    "@types/aws-lambda": "^8.10.64",
+    "@types/jest": "^26.0.15",
+    "@types/node": "10.17.5",
+    "@types/webpack": "^4.41.25",
+    "@webpack-cli/init": "^1.0.3",
+    "aws-cdk": "1.75.0",
+    "aws-sdk": "^2.799.0",
+    "jest": "^26.0.15",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^8.0.11",
+    "ts-node": "^9.0.0",
+    "typescript": "^3.9.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-lambda": "^1.75.0",
+    "@aws-cdk/core": "1.75.0",
+    "aws-xray-sdk-core": "^3.2.0",
+    "source-map-support": "^0.5.16"
+  },
+  "bundleDependencies": [
+    "aws-sdk"
+  ],
+  "targets": {
+    "cdk-lambda": {
+      "context": "node",
+      "includeNodeModules": {
+        "aws-sdk": false
+      },
+      "sourceMap": false,
+      "minify": false,
+      "engines": {
+        "node": ">= 10"
+      }
+    }
+  }
+}

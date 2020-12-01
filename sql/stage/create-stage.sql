@@ -1,0 +1,5 @@
+CREATE OR REPLACE STAGE "YOUR_DB"."YOUR_SCHEMA"."DYNAMODB_SNOWFLAKE_BLOG"
+    STORAGE_INTEGRATION = DYNAMODB_SNOWFLAKE_BLOG  
+    URL = 's3://your_bucket/dynamodb'
+    FILE_FORMAT = (  TYPE = JSON ,COMPRESSION = GZIP)
+    COMMENT = 'external stage to dynamodb export s3 bucket';
